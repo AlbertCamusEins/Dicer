@@ -1,0 +1,23 @@
+{
+	"fh001": {
+	  "name": "fireball",
+	  "texture_path": "res://Assets/dice-fireball.png",
+	  "cast_condition": 0,
+	  "target_data": [{
+		"team": 1,          
+		"type": 0,          
+		"condition": {
+		  "dice_reference": {
+			"type": 0,      
+			"face": 0       
+		  }
+		},
+		"index": 0
+	  }],
+	  "effect_data": [{
+		"type": 0,         
+		"value": -6,
+		"target_index": [0]
+	  }]
+	}
+}

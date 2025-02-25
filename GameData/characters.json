@@ -1,0 +1,32 @@
+{
+  "characters": {
+	"fc001": {
+	  "name": "Lina",
+	  "texture_path": "res://Assets/dice-Lina.png",
+	  "base_health": 18,
+	  "trait_id": "t001",      
+	  "prime_hex_id": "fh001"  
+	},
+	"fc002": {
+	  "name": "Slime",
+	  "texture_path": "res://Assets/dice-Slime.png",
+	  "base_health": 20,
+	  "trait_id": "t002",      
+	  "prime_hex_id": "fh002"  
+	},
+	"fc003": {
+	  "name": "Bob",
+	  "texture_path": "res://Assets/dice-Bob.png",
+	  "base_health": 22,
+	  "trait_id": "t003",      
+	  "prime_hex_id": "fh003"  
+	},
+	"fc004": {
+	  "name": "Robin",
+	  "texture_path": "res://Assets/dice-Robin.png",
+	  "base_health": 16,
+	  "trait_id": "t004",      
+	  "prime_hex_id": "fh004"  
+	}
+  }
+}
