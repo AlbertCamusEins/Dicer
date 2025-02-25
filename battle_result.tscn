@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8mluo8g3ee06"]
+
+[ext_resource type="Script" path="res://Scripts/scenes scripts/battle_result.gd" id="1_i54cb"]
+[ext_resource type="Texture2D" uid="uid://bc3iejv6igupq" path="res://Assets/ui-money-big.png" id="2_fmqch"]
+
+[node name="Battle Result" type="Node2D"]
+script = ExtResource("1_i54cb")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 717.0
+offset_top = 156.0
+offset_right = 908.0
+offset_bottom = 293.0
+theme_override_font_sizes/font_size = 100
+text = "text"
+horizontal_alignment = 1
+
+[node name="Continue button" type="Button" parent="."]
+offset_left = 821.0
+offset_top = 871.0
+offset_right = 1093.0
+offset_bottom = 962.0
+theme_override_font_sizes/font_size = 60
+text = "Continue"
+
+[node name="Gain gold button" type="Button" parent="."]
+offset_left = 745.0
+offset_top = 430.0
+offset_right = 1158.0
+offset_bottom = 550.0
+theme_override_font_sizes/font_size = 60
+text = "gold "
+icon = ExtResource("2_fmqch")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1369.0
+offset_top = 65.0
+offset_right = 1757.0
+offset_bottom = 148.0
+theme_override_font_sizes/font_size = 60
+text = "text2"
+
+[connection signal="pressed" from="Continue button" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Gain gold button" to="." method="_on_gain_gold_button_pressed"]

@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://xkxhseml01f7"]
+
+[ext_resource type="Script" path="res://Scripts/pause_screen.gd" id="1_qundu"]
+
+[node name="PauseScreen" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_qundu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 779.0
+offset_top = 100.0
+offset_right = 1131.0
+offset_bottom = 237.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Paused"
+
+[node name="Continue button" type="Button" parent="."]
+offset_left = 824.0
+offset_top = 356.0
+offset_right = 1088.0
+offset_bottom = 447.0
+theme_override_font_sizes/font_size = 60
+text = "continue"
+
+[node name="Settings button" type="Button" parent="."]
+offset_left = 837.0
+offset_top = 486.0
+offset_right = 1077.0
+offset_bottom = 577.0
+theme_override_font_sizes/font_size = 60
+text = "Settings"
+
+[node name="Return to Main Menu button" type="Button" parent="."]
+offset_left = 652.0
+offset_top = 614.0
+offset_right = 1277.0
+offset_bottom = 705.0
+theme_override_font_sizes/font_size = 60
+text = "Return to Main Menu"
+
+[connection signal="pressed" from="Continue button" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Return to Main Menu button" to="." method="_on_return_to_main_menu_button_pressed"]

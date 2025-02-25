@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvols6vyriqwr"]
+
+[ext_resource type="Script" path="res://Scripts/sub scenes scripts/player_character.gd" id="1_gynuk"]
+[ext_resource type="Texture2D" uid="uid://uilvjxhhtuim" path="res://Assets/loading_frame.png" id="2_an0ih"]
+[ext_resource type="Texture2D" uid="uid://c7gcd57vwb6gk" path="res://Assets/fill-dice.png" id="3_lrlmm"]
+[ext_resource type="Texture2D" uid="uid://cqtoc43lc8pj2" path="res://Assets/ui-shield.png" id="4_5eehi"]
+
+[node name="PlayerCharacter" type="Node2D"]
+script = ExtResource("1_gynuk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = 91.0
+offset_right = 72.0
+offset_bottom = 113.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+texture_over = ExtResource("2_an0ih")
+texture_progress = ExtResource("3_lrlmm")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -50.0
+offset_top = 109.0
+offset_right = 2.0
+offset_bottom = 164.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -126.0
+offset_top = 75.0
+offset_right = -90.0
+offset_bottom = 117.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Ui-shield" type="Sprite2D" parent="."]
+position = Vector2(-108, 99)
+scale = Vector2(4, 4)
+texture = ExtResource("4_5eehi")

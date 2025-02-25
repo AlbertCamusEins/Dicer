@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwgognjnb3lfs"]
+
+[ext_resource type="Script" path="res://Scripts/scenes scripts/battle_scene.gd" id="1_scfpv"]
+[ext_resource type="Texture2D" uid="uid://1tfrv1q637nm" path="res://Assets/background-battle.png" id="2_1t5n0"]
+[ext_resource type="PackedScene" uid="uid://b6x3e5vguub5d" path="res://Scenes/dice_face_container.tscn" id="2_f1b8e"]
+[ext_resource type="Script" path="res://Scripts/label.gd" id="3_vp0nf"]
+[ext_resource type="Texture2D" uid="uid://b8tl4c5fekdeo" path="res://Assets/ui-pause.png" id="5_j66d1"]
+
+[node name="BattleScene" type="Node2D"]
+script = ExtResource("1_scfpv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_1t5n0")
+
+[node name="Switch" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 221.0
+offset_top = 155.0
+offset_right = 353.0
+offset_bottom = 218.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(66, 32)
+theme_override_font_sizes/font_size = 40
+text = "switch"
+
+[node name="DiceContainer" parent="." instance=ExtResource("2_f1b8e")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(925, 933)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 723.0
+offset_top = 30.0
+offset_right = 893.0
+offset_bottom = 99.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Round "
+script = ExtResource("3_vp0nf")
+
+[node name="DIce!" type="Button" parent="."]
+offset_left = 1181.0
+offset_top = 830.0
+offset_right = 1332.0
+offset_bottom = 921.0
+theme_override_font_sizes/font_size = 60
+text = "DIce!"
+
+[node name="Next Round" type="Button" parent="."]
+offset_left = 1138.0
+offset_top = 966.0
+offset_right = 1374.0
+offset_bottom = 1029.0
+theme_override_font_sizes/font_size = 40
+text = "Next Round"
+
+[node name="Pause button" type="Button" parent="."]
+offset_left = 1745.0
+offset_right = 1781.0
+offset_bottom = 36.0
+scale = Vector2(4, 4)
+icon = ExtResource("5_j66d1")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Switch" to="." method="_on_switch_pressed"]
+[connection signal="pressed" from="DIce!" to="." method="_on_d_ice_pressed"]
+[connection signal="pressed" from="Next Round" to="." method="_on_next_round_pressed"]
+[connection signal="pressed" from="Pause button" to="." method="_on_pause_button_pressed"]

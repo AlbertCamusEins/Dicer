@@ -1,0 +1,112 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqyxppvgup1qp"]
+
+[ext_resource type="Script" path="res://Scripts/scenes scripts/custom_dice_scene.gd" id="1_efhyx"]
+[ext_resource type="Texture2D" uid="uid://b3u62xsaio1n5" path="res://Assets/DALL·E 2025-02-05 09.59.07 - A black and white digital illustration featuring various dice, drawn with clean lines and grid patterns. The image includes different types of dice, s.webp" id="1_qijmr"]
+[ext_resource type="Texture2D" uid="uid://bq8cqauqjpo0q" path="res://Assets/dice-to-pick.png" id="2_322u3"]
+
+[node name="CustomDiceScene" type="Node2D"]
+script = ExtResource("1_efhyx")
+
+[node name="Background Pic" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.309804)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qijmr")
+
+[node name="White Cover" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.223529)
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 1910.0
+offset_bottom = 1070.0
+
+[node name="Custom-Dice panel" type="Panel" parent="."]
+offset_left = 589.0
+offset_top = 31.0
+offset_right = 1301.0
+offset_bottom = 149.0
+
+[node name="Call it Custom-Dice!" type="Label" parent="Custom-Dice panel"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 7.0
+offset_right = 579.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 70
+text = "Custom-Dice!"
+
+[node name="Frien-Dice" type="TextureButton" parent="."]
+offset_left = 589.0
+offset_top = 452.0
+offset_right = 701.0
+offset_bottom = 564.0
+texture_normal = ExtResource("2_322u3")
+stretch_mode = 0
+
+[node name="Ac-Dice" type="TextureButton" parent="."]
+offset_left = 889.0
+offset_top = 452.0
+offset_right = 1001.0
+offset_bottom = 564.0
+texture_normal = ExtResource("2_322u3")
+stretch_mode = 0
+
+[node name="Hex-Dice" type="TextureButton" parent="."]
+offset_left = 1189.0
+offset_top = 452.0
+offset_right = 1301.0
+offset_bottom = 564.0
+texture_normal = ExtResource("2_322u3")
+stretch_mode = 0
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="Call it Pick up a Dice" type="Label" parent="Labels"]
+offset_left = 780.0
+offset_top = 190.0
+offset_right = 1113.0
+offset_bottom = 259.0
+theme_override_font_sizes/font_size = 50
+text = "Pick up a Dice"
+
+[node name="Call it Frien-Dice" type="Label" parent="Labels"]
+offset_left = 549.0
+offset_top = 581.0
+offset_right = 743.0
+offset_bottom = 636.0
+theme_override_font_sizes/font_size = 40
+text = "Frien-Dice"
+
+[node name="Call it Ac-Dice" type="Label" parent="Labels"]
+offset_left = 875.0
+offset_top = 581.0
+offset_right = 1018.0
+offset_bottom = 636.0
+theme_override_font_sizes/font_size = 40
+text = "Ac-Dice"
+
+[node name="Call it Hex-Dice" type="Label" parent="Labels"]
+offset_left = 1152.0
+offset_top = 581.0
+offset_right = 1342.0
+offset_bottom = 636.0
+theme_override_font_sizes/font_size = 40
+text = "Hex-Dice"
+
+[node name="Return to map button" type="Button" parent="."]
+offset_left = 765.0
+offset_top = 831.0
+offset_right = 1165.0
+offset_bottom = 894.0
+theme_override_font_sizes/font_size = 40
+text = "Return to map"
+
+[connection signal="pressed" from="Frien-Dice" to="." method="_on_frien_dice_pressed"]
+[connection signal="pressed" from="Ac-Dice" to="." method="_on_ac_dice_pressed"]
+[connection signal="pressed" from="Hex-Dice" to="." method="_on_hex_dice_pressed"]
+[connection signal="pressed" from="Return to map button" to="." method="_on_return_to_map_pressed"]

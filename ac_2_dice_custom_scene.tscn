@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://depbkjv13xg7m"]
+
+[ext_resource type="Script" path="res://Scripts/scenes scripts/ac_2_dice_custom_scene.gd" id="1_fdpih"]
+[ext_resource type="PackedScene" uid="uid://bfg3wbbixe7tl" path="res://Scenes/dice_slot.tscn" id="2_543rv"]
+[ext_resource type="Script" path="res://Scripts/uncommon_act_face_insert_manager.gd" id="3_ssmip"]
+[ext_resource type="PackedScene" uid="uid://b4g45ca4ow8h2" path="res://Scenes/dice.tscn" id="4_2amid"]
+[ext_resource type="PackedScene" uid="uid://b6x3e5vguub5d" path="res://Scenes/dice_face_container.tscn" id="5_mdnlt"]
+
+[node name="Ac2DiceCustomScene" type="Node2D"]
+script = ExtResource("1_fdpih")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 638.0
+offset_top = 63.0
+offset_right = 1273.0
+offset_bottom = 173.0
+theme_override_font_sizes/font_size = 80
+text = "Uncommon Acts"
+
+[node name="DoneButton" type="Button" parent="."]
+offset_left = 1015.0
+offset_top = 846.0
+offset_right = 1125.0
+offset_bottom = 909.0
+theme_override_font_sizes/font_size = 40
+text = "Done"
+
+[node name="Dice Slot1" parent="." instance=ExtResource("2_543rv")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1136, 461)
+
+[node name="Dice Slot2" parent="." instance=ExtResource("2_543rv")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1248, 349)
+
+[node name="Dice Slot3" parent="." instance=ExtResource("2_543rv")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1248, 461)
+
+[node name="Dice Slot4" parent="." instance=ExtResource("2_543rv")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1248, 573)
+
+[node name="Dice Slot5" parent="." instance=ExtResource("2_543rv")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1360, 461)
+
+[node name="Dice Slot6" parent="." instance=ExtResource("2_543rv")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1472, 461)
+
+[node name="Dice Face Insert Manager" type="Node2D" parent="."]
+script = ExtResource("3_ssmip")
+
+[node name="Ac2-Dice" parent="." instance=ExtResource("4_2amid")]
+position = Vector2(936, 436)
+
+[node name="DiceFaceContainer" parent="." instance=ExtResource("5_mdnlt")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(497, 432)
+
+[node name="Autofill uncommon dice button" type="Button" parent="."]
+offset_left = 728.0
+offset_top = 844.0
+offset_right = 876.0
+offset_bottom = 907.0
+theme_override_font_sizes/font_size = 40
+text = "Autofill"
+
+[connection signal="pressed" from="DoneButton" to="." method="_on_done_button_pressed"]
+[connection signal="pressed" from="Autofill uncommon dice button" to="." method="_on_autofill_uncommon_dice_button_pressed"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6x3e5vguub5d"]
+
+[ext_resource type="Texture2D" uid="uid://dmq4b6r0unba1" path="res://Assets/Dice-Face-Container.png" id="1_3sok8"]
+
+[node name="DiceFaceContainer" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_3sok8")

@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://xqp2xd5m2m5x"]
+
+[ext_resource type="Script" path="res://Scripts/scenes scripts/main_menu_scene.gd" id="1_urbdi"]
+
+[node name="MainMenuScene" type="Node2D"]
+script = ExtResource("1_urbdi")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 791.0
+offset_top = 240.0
+offset_right = 1168.0
+offset_bottom = 445.0
+theme_override_font_sizes/font_size = 150
+text = "Dicer"
+
+[node name="Start New Game Button" type="Button" parent="."]
+offset_left = 732.0
+offset_top = 449.0
+offset_right = 1213.0
+offset_bottom = 540.0
+theme_override_font_sizes/font_size = 60
+text = "Start New Game"
+
+[node name="Continue Button" type="Button" parent="."]
+offset_left = 844.0
+offset_top = 562.0
+offset_right = 1116.0
+offset_bottom = 653.0
+theme_override_font_sizes/font_size = 60
+text = "Continue"
+
+[node name="Settings Button" type="Button" parent="."]
+offset_left = 869.0
+offset_top = 679.0
+offset_right = 1109.0
+offset_bottom = 770.0
+theme_override_font_sizes/font_size = 60
+text = "Settings"
+
+[node name="Exit Game Button" type="Button" parent="."]
+offset_left = 827.0
+offset_top = 799.0
+offset_right = 1128.0
+offset_bottom = 890.0
+theme_override_font_sizes/font_size = 60
+text = "Exit Game"
+
+[connection signal="pressed" from="Start New Game Button" to="." method="_on_start_new_game_pressed"]
+[connection signal="pressed" from="Continue Button" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Exit Game Button" to="." method="_on_exit_game_button_pressed"]

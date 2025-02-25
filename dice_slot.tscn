@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfg3wbbixe7tl"]
+
+[ext_resource type="Texture2D" uid="uid://be5vm0s4nqlra" path="res://Assets/blank-dice.png" id="1_3odvw"]
+[ext_resource type="Script" path="res://Scripts/sub scenes scripts/dice_slot.gd" id="1_c1roj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jqw2"]
+size = Vector2(96, 96)
+
+[node name="Dice Slot" type="Node2D"]
+script = ExtResource("1_c1roj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_3odvw")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_1jqw2")

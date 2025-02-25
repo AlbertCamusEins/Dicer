@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://f5ujn2coo00w"]
+
+[ext_resource type="Script" path="res://Scripts/scenes scripts/map_scene.gd" id="1_lmv5h"]
+[ext_resource type="Texture2D" uid="uid://b8tl4c5fekdeo" path="res://Assets/ui-pause.png" id="2_rovjj"]
+
+[node name="MapScene" type="Node2D"]
+script = ExtResource("1_lmv5h")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1556.0
+offset_top = 58.0
+offset_right = 1820.0
+offset_bottom = 121.0
+theme_override_font_sizes/font_size = 40
+text = "Custom-Dice!"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 872.0
+offset_top = 34.0
+offset_right = 1062.0
+offset_bottom = 144.0
+theme_override_font_sizes/font_size = 80
+text = "Map"
+
+[node name="Pause button" type="Button" parent="."]
+offset_left = 1621.0
+offset_top = 127.0
+offset_right = 1657.0
+offset_bottom = 163.0
+scale = Vector2(4, 4)
+icon = ExtResource("2_rovjj")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 117.0
+offset_top = 28.0
+offset_right = 335.0
+offset_bottom = 138.0
+theme_override_font_sizes/font_size = 80
+text = "text"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_custom_dice_pressed"]
+[connection signal="pressed" from="Pause button" to="." method="_on_pause_button_pressed"]

@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://g7fk1sdk8ml7"]
+
+[ext_resource type="Script" path="res://Scripts/scenes scripts/hex_dice_custom_scene.gd" id="1_o0b1a"]
+[ext_resource type="PackedScene" uid="uid://bfg3wbbixe7tl" path="res://Scenes/dice_slot.tscn" id="2_y1wqx"]
+[ext_resource type="Script" path="res://Scripts/hex_face_insert_manager.gd" id="3_7o4b6"]
+[ext_resource type="PackedScene" uid="uid://b4g45ca4ow8h2" path="res://Scenes/dice.tscn" id="4_bf8qn"]
+[ext_resource type="PackedScene" uid="uid://b6x3e5vguub5d" path="res://Scenes/dice_face_container.tscn" id="5_wdfhq"]
+
+[node name="HexDiceCustomScene" type="Node2D"]
+script = ExtResource("1_o0b1a")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 360.0
+offset_top = 37.0
+offset_right = 1558.0
+offset_bottom = 147.0
+theme_override_font_sizes/font_size = 80
+text = "This is Hex-Dice custom scene"
+
+[node name="Done" type="Button" parent="."]
+offset_left = 960.0
+offset_top = 743.0
+offset_right = 1081.0
+offset_bottom = 806.0
+theme_override_font_sizes/font_size = 40
+text = "Done"
+
+[node name="Dice Slot1" parent="." instance=ExtResource("2_y1wqx")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1136, 461)
+
+[node name="Dice Slot2" parent="." instance=ExtResource("2_y1wqx")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1248, 349)
+
+[node name="Dice Slot3" parent="." instance=ExtResource("2_y1wqx")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1248, 461)
+
+[node name="Dice Slot4" parent="." instance=ExtResource("2_y1wqx")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1248, 573)
+
+[node name="Dice Slot5" parent="." instance=ExtResource("2_y1wqx")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1360, 461)
+
+[node name="Dice Slot6" parent="." instance=ExtResource("2_y1wqx")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1472, 461)
+
+[node name="Dice Face Insert Manager" type="Node2D" parent="."]
+script = ExtResource("3_7o4b6")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 768.0
+offset_top = 300.0
+offset_right = 1015.0
+offset_bottom = 355.0
+theme_override_font_sizes/font_size = 40
+text = "Dice Preview"
+
+[node name="Hex2-Dice" parent="." instance=ExtResource("4_bf8qn")]
+position = Vector2(871, 446)
+
+[node name="DiceFaceContainer" parent="." instance=ExtResource("5_wdfhq")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(497, 432)
+
+[node name="Autofill-hex dice button" type="Button" parent="."]
+offset_left = 652.0
+offset_top = 733.0
+offset_right = 800.0
+offset_bottom = 796.0
+theme_override_font_sizes/font_size = 40
+text = "Autofill"
+
+[connection signal="pressed" from="Done" to="." method="_on_done_button_pressed"]
+[connection signal="pressed" from="Autofill-hex dice button" to="." method="_on_autofillhex_dice_button_pressed"]
